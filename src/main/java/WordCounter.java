@@ -9,7 +9,7 @@ public class WordCounter {
         this.text = text;
     }
 
-    public Integer countDifferentWords(){
+    public Integer CountUniqueWords(){
         String[] words = this.prepareInputForCounting(this.text);
         this.differentWords = new ArrayList<String>();
 
@@ -19,7 +19,6 @@ public class WordCounter {
                 this.differentWords.add(lowerCaseWord);
             }
         }
-
         return this.differentWords.size();
     }
 
@@ -32,11 +31,4 @@ public class WordCounter {
         String regexToSearch = "/[-!$%^&*()_+|~=`{}\\[\\]:\";'<>?,.\\/]/";
         return input.replace(regexToSearch, " ");
     }
-
-    public static void main(String[] args){
-        String text = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500";
-        WordCounter wordCounter = new WordCounter(text);
-        System.out.println("The number of words is: "+ wordCounter.countDifferentWords());
-    }
-
 }
