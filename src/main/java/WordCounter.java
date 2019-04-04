@@ -10,7 +10,7 @@ public class WordCounter {
     }
 
     public Integer countDifferentWords(){
-        String[] words = this.prepareInputForCounting();
+        String[] words = this.prepareInputForCounting(this.text);
         this.differentWords = new ArrayList<String>();
 
         for (String word: words) {
