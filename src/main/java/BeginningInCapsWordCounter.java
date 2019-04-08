@@ -1,15 +1,20 @@
-public clas BeginningInCapsWordCounter extends WordCounter{
+public class BeginningInCapsWordCounter extends WordCounter{
 
-    public void Count(){
+    @Override
+    public Integer count(String text){
+        Integer result = 0;
+        String[] words = this.prepareInputForWordCounting(text);
         for (String word : words) {
             if (isCap(word.charAt(0))) {
                 result++;
             }
         }
+        return result;
     }
 
-    private String isCap(char c){
-        return (c=65 && c<=90);
+    private Boolean isCap(char character){
+        Integer code = (int)character;
+        return code >= 65 && code <= 90;
     }
 
 }

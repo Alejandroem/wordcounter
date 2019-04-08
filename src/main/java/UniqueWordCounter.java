@@ -1,17 +1,20 @@
+import java.util.ArrayList;
+
 public class UniqueWordCounter extends WordCounter{
     private ArrayList<String> differentWords;
 
-    public void Count(){
-        this.differentWords = new ArrayList<String>();
+    @Override
+    public Integer count(String text){
+        ArrayList<String> differentWords = new ArrayList<String>();
+        String[] words = this.prepareInputForWordCounting(text);
 
         for (String word: words) {
             String lowerCaseWord= word.toLowerCase();
-            if(!this.differentWords.contains(lowerCaseWord)){
-                this.differentWords.add(lowerCaseWord);
+            if(!differentWords.contains(lowerCaseWord)){
+                differentWords.add(lowerCaseWord);
             }
         }
-        result = this.differentWords.size();
+        return differentWords.size();
     }
-
 }
 

@@ -1,31 +1,20 @@
-import java.util.ArrayList;
-
 public abstract class WordCounter {
 
-    private String text;
-    public String[] words;
-    public result;
-
-    public WordCounter(String text){
-        this.text = text;
+    public WordCounter(){
     }
 
-    public abstract void Count();
+    public abstract Integer count(String text);
 
-    public int GetCount()
-    {
-        this.words = this.prepareInputForCounting(this.text);
-        this.count();
-        return result;
+    public String[] prepareInputForWordCounting(String text){
+        return this.splitTextIntoWords(this.removeSymbolsFromText(text));
     }
 
-    public String[] prepareInputForCounting(String text){
-        String temporalText = this.cleanInput(text);
-        return temporalText.split(" ");
+    public String[] splitTextIntoWords(String text){
+        return text.split(" ");
     }
 
-    private String cleanInput(String input){
+    private String removeSymbolsFromText(String input){
         String regexToSearch = "/[-!$%^&*()_+|~=`{}\\[\\]:\";'<>?,.\\/]/";
-        return input.replace(regexToSearch, " ");
+        return input.replace(regexToSearch , " ");
     }
 }
