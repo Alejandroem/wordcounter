@@ -15,7 +15,7 @@ public class StartingWithVocalsWordCounter extends WordCounter{
     }
 
     private boolean isVocal(Character c){
-        return "aeiou".indexOf(c) > 0;
+        return "aeiou".indexOf(c) >= 0;
     }
 
 }
