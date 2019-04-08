@@ -1,5 +1,5 @@
 public class MoreThanOneCharWordCounter() extends WordCounter{
-    public Integer Count(){
+    public void Count(){
         for (String word: words) {
         String lowerCaseWord= word.toLowerCase();
             if(isVocal(lowerCaseWord.charAt(0))){

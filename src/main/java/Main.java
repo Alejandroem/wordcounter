@@ -8,10 +8,10 @@ public class Main{
         MoreThanOneCharWordCounter moreThanOneCharWordCounter = new MoreThanOneCharWordCounter(text);
         StartingWithVocalsWordCounter startinWithVocalsWordCounter = new StartingWithVocalsWordCounter(text);
 
-        System.out.println("The number of unique words is: "+ uniqueWordCounter.getCount());
-        System.out.println("The number of words beginning with vowels is: " + startinWithVocalsWordCounter.getCount());
-        System.out.println("The number of words with more than one characters is: " + moreThanOneCharWordCounter.getCount());
-        System.out.println("The number of words beginning with caps is: " + beginningInCapsWordCounter.getCount());
+        System.out.println("The number of unique words is: "+ uniqueWordCounter.GetCount());
+        System.out.println("The number of words beginning with vowels is: " + startinWithVocalsWordCounter.GetCount());
+        System.out.println("The number of words with more than one characters is: " + moreThanOneCharWordCounter.GetCount());
+        System.out.println("The number of words beginning with caps is: " + beginningInCapsWordCounter.GetCount());
 
     }
 }
