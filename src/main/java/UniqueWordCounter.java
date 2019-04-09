@@ -5,7 +5,7 @@ public class UniqueWordCounter extends WordCounter{
 
     @Override
     public Integer count(String text){
-        ArrayList<String> differentWords = new ArrayList<String>();
+        List<String> differentWords = new ArrayList<String>();
         String[] words = this.prepareInputForWordCounting(text);
 
         for (String word: words) {
