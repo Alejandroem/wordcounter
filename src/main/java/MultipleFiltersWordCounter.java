@@ -1,15 +1,17 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class WordCounterWithMultipleFilters extends WordCounter{
+public class MultipleFiltersWordCounter extends WordCounter{
 
-    public WordCounterWithMultipleFilters(String text) {
+    public MultipleFiltersWordCounter(String text, List<WordCounter> filters) {
         super(text);
+        this.filters = filters;
     }
 
-    List<WordCounter> wordCounters = new ArrayList<WordCounter>();
+    List<WordCounter> filters = new ArrayList<WordCounter>();
+
     public void add(WordCounter wordCounter){
-        wordCounters.add(wordCounter);
+        filters.add(wordCounter);
     }
 
     @Override
@@ -25,7 +27,7 @@ public class WordCounterWithMultipleFilters extends WordCounter{
 
     protected Boolean isValid(String word) {
         for (WordCounter counter:
-             this.wordCounters) {
+             this.filters) {
            if (!counter.isValid(word)){
                return  false;
            }
