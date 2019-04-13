@@ -1,16 +1,25 @@
-public class MoreThanOneCharWordCounter() extends WordCounter{
-    public void Count(){
-        for (String word: words) {
-        String lowerCaseWord= word.toLowerCase();
-            if(isVocal(lowerCaseWord.charAt(0))){
+public class StartingWithVocalsWordCounter extends WordCounter{
+
+
+    public StartingWithVocalsWordCounter(String text) {
+        super(text);
+    }
+
+    @Override
+    public Integer count(){
+        Integer result = 0;
+        for (String word: getWords()) {
+            if(isValid(word)){
                 result++;
             }
         }
+        return result;
     }
 
-    private String isVocal(char c){
-        String regexVocals = "/[aeiou]/";
-        return c.equals(regexVocals);
+    protected Boolean isValid(String word) {
+        String lowerCaseWord= word.toLowerCase();
+        return "aeiou".indexOf(lowerCaseWord.charAt(0)) >= 0;
     }
+
 
 }

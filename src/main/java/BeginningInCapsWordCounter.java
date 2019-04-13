@@ -1,16 +1,24 @@
-public clas BeginningInCapsWordCounter extends WordCounter{
+public class BeginningInCapsWordCounter extends WordCounter {
 
-    public void Count(){
-        for (String word : words) {
-            if (isCap(word.charAt(0))) {
+    public BeginningInCapsWordCounter(String text) {
+        super(text);
+    }
+
+    @Override
+    public Integer count(){
+        Integer result = 0;
+        for (String word : getWords()) {
+            if (isValid(word)) {
                 result++;
             }
         }
+        return result;
     }
 
-    private String isCap(char c){
-        return (c=65 && c<=90);
+    protected Boolean isValid(String word) {
+        return Character.isUpperCase(word.charAt(0));
     }
+
 
 }
 
